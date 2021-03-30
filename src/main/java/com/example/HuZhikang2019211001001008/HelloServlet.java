@@ -20,6 +20,9 @@ public class HelloServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+        //String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        //String url = "jdbc.sqlserver://localhost;databaseName=userdb;";
+
     }
 
     public void destroy() {
