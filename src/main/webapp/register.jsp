@@ -17,7 +17,7 @@
     password<input type="password" name="password"/><br/>
     Email<input type="text" name="email"/><br/>
     Gender:<input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female">Female<br/>
-    Date of Birth :<input type="text" name="birthDate"/><br/>
+    Date of Birth :<input type="text" name="birthdate"/><br/>
     <input type="submit" value="Register"/>
 </form>
 

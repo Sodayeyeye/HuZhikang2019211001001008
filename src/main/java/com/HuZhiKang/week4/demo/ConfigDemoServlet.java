@@ -20,6 +20,7 @@ public class ConfigDemoServlet extends HttpServlet {
         ServletConfig config = getServletConfig();
         String name =  config.getInitParameter("name");
         String studentId =  config.getInitParameter("studentId");
+
         // print - write into response
         PrintWriter writer = response.getWriter();
         writer.println("<br>Name:  "+name);
