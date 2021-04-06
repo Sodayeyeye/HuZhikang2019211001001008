@@ -90,4 +90,13 @@
         <param-value>donotcry...</param-value>
     </context-param>
 
+    <servlet>
+        <servlet-name>LifeCircleServlet</servlet-name>
+        <servlet-class>com.HuZhiKang.week3.demo.LifeCycleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LifeCircleServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+
 </web-app>

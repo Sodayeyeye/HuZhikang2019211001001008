@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(urlPatterns = "/register")
+@WebServlet(urlPatterns = "/register1")
 
 public class RegisterServlet1 extends HttpServlet {
     Connection con = null;
