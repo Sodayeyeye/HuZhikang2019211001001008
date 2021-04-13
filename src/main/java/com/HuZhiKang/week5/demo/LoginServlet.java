@@ -59,11 +59,22 @@ public class LoginServlet extends HttpServlet {
         }
         try {
             if(rs.next()){
-                out.println("Login Success!!!");
-                out.println("Welcome!"+username);
+                System.out.println("Login Success!!!");
+                //out.println("Welcome!"+username);
+                //week 5 code
+                request.setAttribute("id",rs.getInt("id"));
+                request.setAttribute("username",rs.getString("username"));
+                request.setAttribute("password",rs.getString("password"));
+                request.setAttribute("email",rs.getString("email"));
+                request.setAttribute("gender",rs.getString("gender"));
+                request.setAttribute("birthdate",rs.getString("birthdate"));
+                //forward to userinfo.jsp
+                request.getRequestDispatcher("userinfo.jsp").forward(request,response);
             }
             else {
-                out.println("Username or Password Error!!!");
+                //out.println("Username or Password Error!!!");
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("login.jsp").forward(request,response);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
