@@ -99,4 +99,7 @@
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
 
+    <welcome-file-list>
+        <welcome-file>home</welcome-file><!-- when you run app - first request send to home - HomeServlet-->
+    </welcome-file-list>
 </web-app>

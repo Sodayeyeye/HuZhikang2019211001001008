@@ -1,5 +1,8 @@
 package com.HuZhiKang.week5.demo;
 
+import com.HuZhiKang.dao.UserDao;
+import com.HuZhiKang.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -27,15 +30,51 @@ public class LoginServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //when user click login menu - request is get
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        String sql="Select * from usertable where username=? and password=?";
         String username =request.getParameter("username");
         String password =request.getParameter("password");
+        // now move jdbc code in dao - MVC design
+        //write mvc code
+        //use model and dao
+        UserDao userDao=new UserDao();
+        try {
+            User user=userDao.findByUsernamePassword(con,username,password);//this methods use for login
+            if(user!=null){
+                //valid
+                //set user into request
+                request.setAttribute("user",user);//get user info in jsp
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
+            }else{
+                //invalid
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+            }
+            //forward -JSP
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*String sql="Select * from usertable where username=? and password=?";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -79,6 +118,7 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            */
         }
     }
-}
+
