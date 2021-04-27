@@ -1,6 +1,6 @@
 package com.HuZhiKang.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
     private int id ;
@@ -85,4 +85,5 @@ public class User {
                 ", birthDate=" + birthDate +
                 '}';
     }
+
 }

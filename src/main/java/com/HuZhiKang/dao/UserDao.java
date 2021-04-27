@@ -45,14 +45,19 @@ public class UserDao implements IUserDao{
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
-        //update ...... where id=?
-        String sql="update usertable set username=?,password=?,email=?,sex=?,birthday=? where id=?";
+        //update ...... where id=? do yourself
+        //TODO 5.1 - write update sql where id = ?
+        //TODO 5.2 - create prepared statement
+        //TODO 5.3 - executeUpdate()
+        //TODO 5.4 - return int
+        String sql="update usertable set username=?,password=?,email=?,gender=?,birthdate=? where id=?";
         PreparedStatement p=con.prepareStatement(sql);
         p.setString(1,user.getUsername());
         p.setString(2,user.getPassword());
         p.setString(3,user.getEmail());
         p.setString(4,user.getGender());
         p.setDate(5, (java.sql.Date) user.getBirthDate());
+      //  System.out.println( user.getBirthDate());
         p.setInt(6,user.getId());
         int i =p.executeUpdate();
         if (i > 0) {
@@ -69,7 +74,6 @@ public class UserDao implements IUserDao{
         p.setInt(1,id);
         ResultSet rs=p.executeQuery();
         User user=null;
-        if(rs.next()){
             if(rs.next()){
                 //get from rs and set into user model
                 user=new User();
@@ -83,7 +87,6 @@ public class UserDao implements IUserDao{
                 //done
             }
 
-        }
         return user;
     }
 
