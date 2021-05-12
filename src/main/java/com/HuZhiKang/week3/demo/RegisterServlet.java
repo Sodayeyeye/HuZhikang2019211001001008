@@ -84,8 +84,8 @@ public class RegisterServlet extends HttpServlet {
 //            request.setAttribute("rename",re);//name - string, value - any type  (objecct)
 //            request.getRequestDispatcher("userList.jsp").forward(request,response);//at this point request given to userList.jsp
 //            System.out.println("i am in RegisterServlet-->doPost()--> after forward()");//no see this line
-        response.sendRedirect("login.jsp");
-
+//        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+        response.sendRedirect("login");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -10,7 +10,7 @@ public class User {
     private  String gender;
     private  Date birthDate;
     //constructor
-    public User() {
+    public User() { 
 
     }
     //full

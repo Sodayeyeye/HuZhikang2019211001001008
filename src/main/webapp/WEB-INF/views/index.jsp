@@ -64,5 +64,8 @@
 			</div>
 		</div>
 	</section><!--/slider-->
+<body>
+
+</body>
 <%@include file="footer.jsp"%>
 
