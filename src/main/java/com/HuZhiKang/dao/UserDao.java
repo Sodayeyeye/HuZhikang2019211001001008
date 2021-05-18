@@ -84,6 +84,7 @@ public class UserDao implements IUserDao{
                 user.setGender(rs.getString("gender"));
                 user.setBirthDate(rs.getDate("birthdate"));
 
+
                 //done
             }
 
