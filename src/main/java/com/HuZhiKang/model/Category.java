@@ -81,17 +81,12 @@ public class Category {
     }
     public static String findByCategoryId(Connection con, int categoryId) throws SQLException {
             String sql = "select * from Category where CategoryId=?";
-            List<Category> list = new ArrayList<Category>();
             PreparedStatement pt=con.prepareStatement(sql);
             pt.setInt(1,categoryId);
             ResultSet rs = pt.executeQuery();
             String categoryName=null;
             while (rs.next()) {
-                Category c=new Category();
-//                c.setCategoryId(rs.getInt("CategoryId"));
-//                c.setCategoryName(rs.getString("CategoryName"));
-//                c.setDescription(rs.getString("Description"));
-//                list.add(c);
+               categoryName=rs.getString("categoryName");
             }
         return categoryName;
     }
