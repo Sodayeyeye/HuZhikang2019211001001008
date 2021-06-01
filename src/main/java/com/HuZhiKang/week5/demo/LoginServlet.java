@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
                 //check session id
                 System.out.println("session id-->"+session.getId());//session id
                 //set time for session
-                session.setMaxInactiveInterval(10);//for 5 10 section if request not come in - tomcat kill session - set 60*60=1h
+                session.setMaxInactiveInterval(10000);//for 5 10 section if request not come in - tomcat kill session - set 60*60=1h
               /*  //week 8 code - demo #1- use cookie for session
                 //create cookie
                 //step 1 :create an object of cookie class
