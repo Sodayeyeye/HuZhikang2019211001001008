@@ -70,8 +70,9 @@ public class ProductDao implements  IProductDao{
         PreparedStatement p=con.prepareStatement(sql);
         p.setInt(1,productId);
         ResultSet rs =p.executeQuery();
-        Product product=new Product();
+        Product product=null;
         if(rs.next()){
+            product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
             product.setProductDescription(rs.getString("ProductDescription"));
