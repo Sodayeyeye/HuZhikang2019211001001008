@@ -131,6 +131,17 @@
         <filter-name>LoggerFilter</filter-name>
         <url-pattern>/hello</url-pattern><!-- url of HelloServlet - this filter is only for HelloFilter-->
     </filter-mapping>
+    <filter>
+        <filter-name>HuZhiKangFilter</filter-name>
+        <filter-class>com.lab2.HuZhiKangFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HuZhiKangFilter</filter-name>
+        <url-pattern>/lab2/welcome.jsp</url-pattern>
+        <url-pattern>/lab2/validation.jsp</url-pattern>
+    </filter-mapping>
+
+
 
 
 </web-app>
