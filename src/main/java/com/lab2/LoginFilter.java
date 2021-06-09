@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "LoginFilter",urlPatterns = {"/lab2/validation.jsp","/lab2/welcome.jsp"})
+@WebFilter(filterName = "LoginFilter",urlPatterns = {"/lab2/validate.jsp","/lab2/welcome.jsp"})
 /* todo 1:map this filter for - 1. /lab2/validation.jsp and /lab2/welcome.jsp */
 public class LoginFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
